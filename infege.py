@@ -57,6 +57,24 @@ def Div_Count(n):
 		k*=(p[i]+1)
 	return k
 
+def Task_23(**param):
+	a = [0]*(param['end']+1)
+	a[param['start']] = 1
+	for i in range(param['start']+1,param['end']+1):
+		for j in range(len(param['multi'])):
+			if i % param['multi'][j] == 0:
+				a[i] += a[i // param['multi'][j]]
+		if param['plus'][0]!=0:
+			for j in range(len(param['plus'])):
+				a[i] += a[i - param['plus'][j]]
+		for j in range(len(param['ex'])):
+			if i==param['ex'][j]:
+				a[i]=0
+		for j in range(len(param['inc'])):
+			if i==param['inc'][j]:
+				for k in range(param['start'],param['inc'][j]):
+					a[k]=0
+	return a[param['end']]
 
 if __name__ == '__main__':
 	print("Библиотека InfEge")
