@@ -1,8 +1,3 @@
-def gcd(p,q):
-	if q==0:
-		return p
-	return gcd(q,p%q)
-
 def CC(p,k,m):
 	m=str(m)
 	a=['A','B','C','D','E','F']
@@ -28,6 +23,14 @@ def CC(p,k,m):
 			ten //= k
 		return newNum
 
+def gcd(p,q):
+	if q==0:
+		return p
+	return gcd(q,p%q)
+
+def lcm(p,q):
+	return p*q/gcd(p,q)
+
 def Factor(n):
 	a = []
 	d = 2
@@ -41,7 +44,7 @@ def Factor(n):
 		a.append(n)
 	return a
 
-def DCount(s):
+def Div_Count(s):
 	p=[]
 	i=0
 	while i < len(s):
