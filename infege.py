@@ -44,7 +44,8 @@ def Factor(n):
 		a.append(n)
 	return a
 
-def Div_Count(s):
+def Div_Count(n):
+	s=Factor(n) 
 	p=[]
 	i=0
 	while i < len(s):
@@ -55,6 +56,7 @@ def Div_Count(s):
 	for i in range(len(p)):
 		k*=(p[i]+1)
 	return k
+
 
 if __name__ == '__main__':
 	print("Библиотека InfEge")
