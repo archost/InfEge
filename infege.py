@@ -68,24 +68,24 @@ def Dividers(n):
 			a.append(n // a[half - j])
 	return a
 
-def Task_23(**param):
-	a = [0]*(param['end']+1)
-	a[param['start']] = 1
-	for i in range(param['start']+1,param['end']+1):
-		for j in range(len(param['multi'])):
-			if i % param['multi'][j] == 0:
-				a[i] += a[i // param['multi'][j]]
-		if param['plus'][0]!=0:
-			for j in range(len(param['plus'])):
-				a[i] += a[i - param['plus'][j]]
-		for j in range(len(param['ex'])):
-			if i==param['ex'][j]:
+def Task_23(start,end,multi=[9999],plus=[0],inc=[-1],ex=[-1]):
+	a = [0]*(end+1)
+	a[start] = 1
+	for i in range(start+1,end+1):
+		for j in range(len(multi)):
+			if i % multi[j] == 0:
+				a[i] += a[i // multi[j]]
+		if plus[0]!=0:
+			for j in range(len(plus)):
+				a[i] += a[i - plus[j]]
+		for j in range(len(ex)):
+			if i==ex[j]:
 				a[i]=0
-		for j in range(len(param['inc'])):
-			if i==param['inc'][j]:
-				for k in range(param['start'],param['inc'][j]):
+		for j in range(len(inc)):
+			if i==inc[j]:
+				for k in range(start,inc[j]):
 					a[k]=0
-	return a[param['end']]
+	return a[end]
 
 if __name__ == '__main__':
 	print("Библиотека InfEge")
