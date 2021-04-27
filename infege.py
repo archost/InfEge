@@ -57,6 +57,17 @@ def Div_Count(n):
 		k*=(p[i]+1)
 	return k
 
+def Dividers(n):
+	a = []
+	for i in range(1, int(n ** 0.5) + 1):
+		if n % i == 0:
+			a.append(i)
+	half=len(a) 
+	for j in range(1,len(a)+1):
+		if (n // a[half - j]) not in a:
+			a.append(n // a[half - j])
+	return a
+
 def Task_23(**param):
 	a = [0]*(param['end']+1)
 	a[param['start']] = 1
