@@ -87,6 +87,13 @@ def Task_23(start,end,multi=[9999],plus=[0],inc=[-1],ex=[-1]):
 					a[k]=0
 	return a[end]
 
+def Palindrome(n):
+	n=str(n)
+	for i in range(len(n)):
+		if n[i]!=n[len(n)-i-1]:
+			return False
+	return True
+
 if __name__ == '__main__':
 	print("Библиотека InfEge")
 __version__ = '0.1'
