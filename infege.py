@@ -70,7 +70,7 @@ def Dividers(n):
 def Task_23(start,end,multi=[9999],plus=[0],minus=[0],inc=[-1],ex=[-1]):
 	if minus[0]!=0:
 		start, end = end, start
-		plus = minus
+		plus = minus.copy()
 	a = [0]*(end+1)
 	a[start] = 1
 	for i in range(start+1,end+1):
